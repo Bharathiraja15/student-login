@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+      }
+      div h1 {
+        padding-bottom: 25px;
+      }
+
+      p {
+        display: inline-block;
+        padding: 0 20px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Work Out Area</h1>
+      <select name="number" id="number1">
+        <option value="0">Zero</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+        <option value="6">Six</option>
+        <option value="7">Seven</option>
+        <option value="8">Eight</option>
+        <option value="9">Nine</option>
+      </select>
+      <select name="operator" id="operator">
+        <option value="+">Plus</option>
+        <option value="-">Minus</option>
+        <option value="*">Times</option>
+        <option value="/">Divided</option>
+      </select>
+      <select name="number" id="number2">
+        <option value="0">Zero</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+        <option value="6">Six</option>
+        <option value="7">Seven</option>
+        <option value="8">Eight</option>
+        <option value="9">Nine</option>
+      </select>
+      <span> =</span>
+
+      <p id="demo"></p>
+      <br />
+    </div>
+    <button onclick="sum()">Click Here</button>
+
+    <script>
+      // Sum
+
+      function sum() {
+        let num1 = document.getElementById("number1").value;
+        let new1 = parseInt(num1);
+        let num2 = document.getElementById("number2").value;
+        let new2 = parseInt(num2);
+        let symbol = document.getElementById("operator").value;
+
+        switch (symbol) {
+          case "+": {
+            let result = new1 + new2;
+            document.getElementById("demo").innerText = result;
+            break;
+          }
+          case "-": {
+            let result = num1 - num2;
+            document.getElementById("demo").innerText = result;
+            break;
+          }
+          case "*": {
+            let result = num1 * num2;
+            document.getElementById("demo").innerText = result;
+            break;
+          }
+          case "/": {
+            let result = num1 / num2;
+            document.getElementById("demo").innerText = result;
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
